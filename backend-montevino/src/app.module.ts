@@ -15,6 +15,7 @@ import { ReservationsModule } from './modules/reservations/reservations.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => config.get('typeorm')!,
     }),
+
     UsersModule,
     ReservationsModule,
   ],

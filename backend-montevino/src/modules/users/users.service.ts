@@ -12,9 +12,13 @@ export class UsersService {
     private readonly usersRepository: Repository<Users>,
   ) {}
 
+  async findByAuth0Id(auth0Id: string): Promise<Users | null> {
+    return this.usersRepository.findOne({ where: { auth0Id } });
+  }
+
   async create(createUserDto: CreateUserDto) {
-    const user = this.usersRepository.create(createUserDto);
-    return await this.usersRepository.save(user);
+    const newUser = this.usersRepository.create(createUserDto);
+    return await this.usersRepository.save(newUser);
   }
 
   async findAll() {

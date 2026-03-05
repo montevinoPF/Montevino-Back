@@ -1,7 +1,6 @@
 import {
   IsEmail,
   IsNotEmpty,
-  IsNumber,
   IsString,
   Matches,
   MinLength,
@@ -13,8 +12,8 @@ export class CreateUserDto {
   email: string;
 
   @IsNotEmpty()
-  @IsNumber()
-  phone: number;
+  @IsString()
+  auth0Id: string;
 
   @IsNotEmpty()
   @IsString()
