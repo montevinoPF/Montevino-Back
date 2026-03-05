@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
 import typeorm from './config/typeorm';
 import { ReservationsModule } from './modules/reservations/reservations.module';
+import { PlatosModule } from './modules/platos/platos.module';
+import { CategoriesModule } from './modules/categories/categories.module';
 
 @Module({
   imports: [
@@ -18,8 +20,11 @@ import { ReservationsModule } from './modules/reservations/reservations.module';
 
     UsersModule,
     ReservationsModule,
+    PlatosModule,
+    CategoriesModule,
   ],
   controllers: [],
   providers: [],
 })
+
 export class AppModule {}
