@@ -32,9 +32,17 @@ export class CategoriesService {
   }
 
   async create(categorieData: CreateCategoryDto) {
-    const newCategorie = this.categoriesRepository.create(categorieData);
-    return await this.categoriesRepository.save(newCategorie);
+  const existingCategory = await this.categoriesRepository.findOneBy({ 
+    name: categorieData.name 
+  });
+
+  if (existingCategory) {
+    throw new NotFoundException(`La categoría '${categorieData.name}' ya existe`);
   }
+
+  const newCategorie = this.categoriesRepository.create(categorieData);
+  return await this.categoriesRepository.save(newCategorie);
+}
 
 
 }
