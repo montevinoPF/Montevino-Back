@@ -1,0 +1,9 @@
+[
+    {
+      "name": "Sushi Premium",
+      "description": "Variedad de pescado fresco, arroz sazonado y alga nory, servido con soja y wasabi",
+      "price": 10.99,
+      "stock": 50,
+      "category": "Japonesa"
+    }
+]
