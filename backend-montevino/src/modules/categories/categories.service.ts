@@ -23,12 +23,21 @@ export class CategoriesService {
     return 'Categories Added';
   }
 
-  async getCategorie(page: number, limit: number) {
-    return await this.categoriesRepository.find({
-      relations: { platos: true },
-      skip: (page - 1) * limit,
-      take: limit,
-    });
+  async findOne(id: string) {
+  const category = await this.categoriesRepository.findOne({
+    where: { id },
+    relations: { platos: true },
+  });
+
+  if (!category) {
+    throw new NotFoundException(`La categoría con ID ${id} no fue encontrada`);
+  }
+
+  return category;
+}
+
+findAll() {
+    return this.categoriesRepository.find({ relations: ['platos'] });
   }
 
   async create(categorieData: CreateCategoryDto) {

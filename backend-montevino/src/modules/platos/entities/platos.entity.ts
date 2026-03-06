@@ -14,13 +14,7 @@ export class Platos {
         unique: true,
     })
     name: string;
-
-  @Column({
-        type: "text",
-        nullable: false,
-    })
-    description: string;
-
+    
   @Column({
         type: "decimal",
         precision: 10,
@@ -28,15 +22,28 @@ export class Platos {
         nullable: false,
     })
     price: number;
+    
+  @Column({
+      type: "text",
+      nullable: false,
+    })
+    ingredientes: string;
 
- @Column({
+  @Column({
+        type: "text",
+        nullable: false,
+    })
+    description: string;
+    
+  @Column({ nullable: true })
+  imageUrl: string;
+
+  @Column({
         type: "int",
         nullable: false,
     })
     stock: number;
 
-  @Column({ nullable: true })
-  imageUrl: string;
 
   @ManyToOne(() => Category, (category) => category.platos)
     @JoinColumn({ name: 'category_id' })
