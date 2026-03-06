@@ -1,4 +1,4 @@
-import { Controller, Body, Get, Param, UseGuards, Put, Delete, ParseIntPipe, ParseUUIDPipe, Post } from '@nestjs/common';
+import { Controller, Body, Get, Param, UseGuards, Put, Delete, ParseIntPipe, ParseUUIDPipe, Post, Query } from '@nestjs/common';
 // import { AuthGuard } from '';
 import { Roles } from '../../decorators/roles.decorator';
 // import { RolesGuard } from 'src/auth/guards/roles.guard';
@@ -21,8 +21,13 @@ export class PlatosController {
   // }
 
   @Get()
-  findAll() {
-    return this.platosService.findAll();
+  getPlatos(@Query('page') page: number = 1, @Query('limit') limit: number = 5) {
+    return this.platosService.getPlatos(page, limit);
+  }
+
+  @Post('seeder')
+  seedPlatos() {
+    return this.platosService.seeder();
   }
 
   // @ApiBearerAuth()

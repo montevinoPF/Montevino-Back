@@ -13,8 +13,13 @@ export class CategoriesController {
   }
 
   @Get()
-  getCategorie(@Query('page') page: number = 1, @Query('limit') limit: number = 5) {
-    return this.categoriesService.getCategorie(page, limit);
+  findAll() {
+    return this.categoriesService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id', ParseUUIDPipe) id: string) {
+    return this.categoriesService.findOne(id);
   }
 
   @ApiBearerAuth() 
