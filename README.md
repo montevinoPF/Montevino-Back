@@ -60,4 +60,4 @@ Desarrollo del backend para una aplicación de ecommerce, utilizando **NestJS, P
    ```bash
    http://localhost:3000/api
 
-✨ Este proyecto refleja mi especialización en backend dentro del Bootcamp Henry.
+✨ Este proyecto refleja mi especialización en backend.
