@@ -30,7 +30,8 @@ Desarrollo del backend para una aplicación de ecommerce, utilizando **NestJS, P
 - CRUD de productos, usuarios y órdenes.  
 - Autenticación y autorización con JWT.  
 - Gestión de imágenes de productos con Cloudinary.  
-- Endpoints documentados con Swagger UI.  
+- Endpoints documentados con Swagger UI.
+- Pago de reservas a través de Mercado Pago
 
 ---
 
