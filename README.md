@@ -8,7 +8,9 @@ Desarrollo del backend para una aplicación de ecommerce, utilizando **NestJS, P
 - Desarrollo completo del **backend**.  
 - Configuración de base de datos relacional con **PostgreSQL** y **TypeORM**.  
 - Implementación de autenticación y autorización con **JWT**.  
-- Integración de subida de imágenes con **Cloudinary**.  
+- Integración de subida de imágenes con **Cloudinary**.
+- Sistema de registro e inicion de sesión con **Auth0**.  
+- Implementación de pasarela de pago con **Mercado Pago**.  
 - Documentación de la API con **Swagger**.  
 
 ---
@@ -19,7 +21,8 @@ Desarrollo del backend para una aplicación de ecommerce, utilizando **NestJS, P
 - **Base de datos:** PostgreSQL  
 - **Autenticación:** JWT  
 - **Storage:** Cloudinary  
-- **Documentación:** Swagger  
+- **Documentación:** Swagger
+- **Integraciones:** Mercado pago, Auth0  
 
 ---
 
